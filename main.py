@@ -5,25 +5,23 @@ from preprocess.movielens10m import preprocess as mvp
 CLUTO_SCLUSTER_EXECUTABLE = "./cluto/scluster"
 CLUTO_VCLUSTER_EXECUTABLE = "./cluto/vcluster"
 MOVIELENS_DATA = './datasets/movielens/'
-CLUSTERED_FILE = './sports.mat.clustering.10'
+# CLUSTERED_FILE = './sports.mat.clustering.10'
 
 NUMBER_USERS_MOVIELENS = 71567
 NUMBER_ITEMS_MOVIELENS = 10681
 
 K = 10
 
-# matrixFileName = mvp()
-# cluto_cluster(K, matrixFileName)
+matrixFileName = mvp()
+CLUSTERED_FILE = cluto_cluster(K, matrixFileName)
 
 g = [0.5] * NUMBER_USERS_MOVIELENS
 g_complement = g
-print(g)
-print(g_complement)
 clusters = [int(line.rstrip('\n')) for line in open(CLUSTERED_FILE)]
-print(clusters)
 
 switched_users = len(g)
 switch_percent = 100
+print(switched_users)
 
 while switch_percent > 1:
     exit()
