@@ -8,3 +8,7 @@ __pycache__/
 
 .idea/
 datasets/
+*.csv
+*.mat
+*.clustering.*
+\.giosave*
